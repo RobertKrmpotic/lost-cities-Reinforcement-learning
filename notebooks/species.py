@@ -9,7 +9,7 @@ from tensorflow.keras.metrics import categorical_crossentropy
 
 
 class Species:
-    
+
     def __init__(self,weights=[]):
         self.fitness = 0
         self.brain = self.create_neuralnetowork(weights)
@@ -40,4 +40,3 @@ class Species:
 
     def set_fitness (self, fitness):
         self.fitness = fitness
-
