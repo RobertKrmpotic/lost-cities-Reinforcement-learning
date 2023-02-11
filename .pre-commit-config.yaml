@@ -1,0 +1,20 @@
+# See https://pre-commit.com for more information
+# See https://pre-commit.com/hooks.html for more hooks
+repos:
+  - repo: https://github.com/pre-commit/pre-commit-hooks
+    rev: v3.2.0
+    hooks:
+    - id: trailing-whitespace
+    - id: end-of-file-fixer
+    - id: check-added-large-files
+    - id: check-toml
+    - id: no-commit-to-branch
+      args: ['--branch', 'main']
+  - repo: https://github.com/pycqa/pydocstyle
+    rev: 6.0.0  # pick a git hash / tag to point to
+    hooks:
+    - id: pydocstyle
+      args:
+      - --convention=google
+      - --add-ignore=D100,D101,D104
+      exclude: ^tests/|^notebooks/
